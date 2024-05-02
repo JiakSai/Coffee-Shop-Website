@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+</head>
+<body>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Long+Cang&family=Oswald:wght@300&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Long Cang', cursive;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .container{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ddc0a5;
+        }
+
+        .signupform{
+            background-color: white;
+            border-radius: 6px;
+            max-width: 430px;
+            width: 100%;
+            padding: 30px;
+        }
+
+        h1{
+            font-size: 28px;
+            font-weight: 600;
+            color: #816955;
+            text-align: center;
+        }
+
+        form{
+            margin-top: 30px;
+        }
+
+        .signupform .field{
+            height: 50px;
+            width: 100%;
+            margin-top: 20px;
+            position: relative;
+            border-radius: 6px;
+        }
+
+        .field input{
+            height: 100%;
+            width: 100%;
+            border: none;
+            font-size: 16px;
+            border-radius: 6px;
+        }
+
+        #button{
+            font-size: 16px;
+            color: white;
+            background-color: #bda17e;
+            cursor: pointer;
+        }
+
+        .field input{
+            outline: none;
+            padding: 0 15px;
+            border : 1px solid #cacaca;
+        }
+
+        .field input:focus{
+            border-bottom-width: 2px;
+        }
+
+        .formlink{
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .formlink p{
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .signupform a{
+            text-decoration: none;
+        }
+
+        .formlink a:hover{
+            text-decoration: underline;
+        }
+
+        #hideicon1,
+        #hideicon2{
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #8b8b8b;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .line{
+            position: relative;
+            height: 1px;
+            width: 100%;
+            margin: 36px 0;
+        }
+
+        .line p{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 0 15px;
+            background-color: white;
+        }
+
+        .media a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #facebook{
+            color: white;
+            background-color: #4267b2;
+        }
+
+        #facebook i{
+            height: 28px;
+            width: 28px;
+            color: #0171d3;
+            font-size: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+        }
+
+        #facebook i,
+        #google img{
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+        }
+
+        #google img{
+            height: 27px;
+            width: 27px;
+            object-fit: cover;
+        }
+
+        #google{
+            border: 1px solid #CACACA;
+            color: black;
+        }
+
+        #google span{
+            font-weight: 500;
+            opacity: 0.85;
+        }
+
+    </style>
+
+    <div class="container">
+        <div class="signupform">
+            <div class="content">
+                <h1>Sign Up</h1>
+
+                <form action="#">
+                    <div class="field">
+                        <input type="email" placeholder="Email" class="email">
+                    </div>
+
+                    <div class="field">
+                        <input type="password" placeholder="Password" class="password" id="password">
+                        <i class='bx bx-hide' id="hideicon1"></i>
+                    </div>
+
+                    <div class="field">
+                        <input type="password" placeholder="Re-enter Password" class="re-enterpassword" id="re-enterpasssword">
+                        <i class='bx bx-hide' id="hideicon2"></i>
+                        <span id="error" style="color: red;font-size: 13px;font-weight: 500;"></span>
+                    </div>
+
+                    <div class="formlink" style="margin-top: 30px;">
+                        <p><a href="#" class="forgotpasslink">Forgot password?</a></p>
+                    </div>
+
+                    <div class="media">
+                        <a class="field" id="button" onclick="validatePassword()">
+                            <span>Sign Up</span>
+                        </a>
+                    </div>
+
+                    <div class="formlink">
+                        <p>Already have account? <a href="login.html" class="loginlink">Login</a></p>
+                    </div>
+                </form>
+
+                <div class="line">
+                    <hr>
+                    <p>Or</p>
+                </div>
+    
+                <div class="media">
+                    <a href="https://www.facebook.com/" class="field" id="facebook">
+                        <i class='bx bxl-facebook' ></i>
+                        <span>Login with Facebook</span>
+                    </a>
+                </div>
+    
+                <div class="media">
+                    <a href="https://accounts.google.com/v3/signin/identifier?hl=en-gb&ifkv=ASKXGp2moFjxwikeA3K5qRPgN1xkeurDtqQBOUBsi4Zgbx1Yy3o0DE-rhA3Ud6IItpXgXfQq-n08iw&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S789106039%3A1704980167809858&theme=glif" class="field" id="google">
+                        <img src="image/googleicon.png">
+                        <span>Login with Google</span>
+                    </a>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+    function validatePassword()
+    {
+        var password =  document.getElementById("password").value;
+        var repassword = document.getElementById("re-enterpasssword").value;
+
+        if (repassword != password) 
+        {
+            error.innerHTML = "Password do not match ! Please try again.";
+        } 
+
+        else
+        {
+            window.open("login.html", "_self");
+        }
+
+    }   
+
+        const forms = document.querySelector(".signupform"),
+        pwShowHide = document.querySelectorAll("#hideicon1"),
+        pwShowHide2 = document.querySelectorAll("#hideicon2"),
+        links = document.querySelectorAll(".formlink");
+        pwShowHide.forEach(eyeIcon => {
+        eyeIcon.addEventListener("click", () => {
+            let pwFields = eyeIcon.parentElement.parentElement.querySelectorAll(".password");
+            
+            pwFields.forEach(password => {
+                if(password.type === "password"){
+                    password.type = "text";
+                    eyeIcon.classList.replace("bx-hide", "bx-show");
+                    return;
+                }
+                password.type = "password";
+                eyeIcon.classList.replace("bx-show", "bx-hide");
+        })
+        
+    })
+})  
+
+        pwShowHide2.forEach(eyeIcon => {
+        eyeIcon.addEventListener("click", () => {
+            let pwFields = eyeIcon.parentElement.parentElement.querySelectorAll(".re-enterpassword");
+            
+            pwFields.forEach(password => {
+                if(password.type === "password"){
+                    password.type = "text";
+                    eyeIcon.classList.replace("bx-hide", "bx-show");
+                    return;
+                }
+                password.type = "password";
+                eyeIcon.classList.replace("bx-show", "bx-hide");
+        })
+        
+    })
+})  
+    </script>
+</body>
+</html>

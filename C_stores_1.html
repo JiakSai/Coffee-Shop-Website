@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="./css/footerstyle.css">
+	<link rel="stylesheet" href="./css/navstyle.css">
+    <title>Our Stores</title>
+	
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script type="module" src="./index.js"></script>
+	
+    <script>
+		 function initMap() {
+            const map = new google.maps.Map(document.getElementById("map"), 
+			{
+                zoom: 4, 
+                center: { lat: 4.2105, lng: 101.9758 }, 
+            });
+
+            function addMarker(location, title) 
+			{
+                new google.maps.Marker({
+                    position: location,
+                    map,
+                    title,
+                });
+            }
+
+            const stores = [
+                {
+                    name: "AEON Mall Nilai",
+                    location: { lat: 2.817851, lng: 101.789334 },
+                },
+                {
+                    name: "Arcoris Mon't Kiara",
+                    location: { lat: 3.167998, lng: 101.651330 },
+                },
+                {
+                    name: "Auto City",
+                    location: { lat: 5.338305, lng: 100.428816 },
+                },
+                {
+                    name: "Ayer@8",
+                    location: { lat: 2.925363, lng: 101.680196 },
+                },
+            ];
+
+            stores.forEach((store) => 
+			{
+                addMarker(store.location, store.name);
+            });
+        }
+		
+
+
+		document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('filterBtn').addEventListener('click', function () {
+        const filterOptions = document.querySelector('.filter-button');
+        filterOptions.classList.toggle('active');
+
+        const open24hours = document.getElementById('open24hours').checked;
+        const driveThru = document.getElementById('driveThru').checked;
+
+        const stores = document.querySelectorAll('.store-container');
+
+          stores.forEach(store => {
+            const storeName = store.querySelector('.name').innerText;
+            const hoursInfo = store.querySelector('.hours').innerText;
+            const is24Hours = hoursInfo.includes('24 Hours');
+            const hasDriveThru = storeName === 'Auto City' || storeName === 'Ayer@8';
+
+            if ((open24hours && !is24Hours) || (driveThru && !hasDriveThru)) {
+                store.style.display = 'none';
+            } else {
+                store.style.display = 'block';
+            }
+        });
+    });
+});
+
+
+    </script>
+	
+    <style>
+		@import url('https://fonts.googleapis.com/css2?family=Long+Cang&family=Oswald:wght@300&display=swap');
+		
+        #top {
+			background-color: white;
+            text-align: center;
+			font-family: 'Long Cang', cursive;
+            font-family: 'Oswald', sans-serif;
+        }
+		
+		#top h2{
+			font-size: 30px;
+		}
+		
+		#top p{
+			font-size: 18px;
+		}
+		
+        .container {
+            display: flex;
+            align-items: stretch;
+        }
+
+        .left-section {
+            flex: 0 0 auto;
+            height: 100vh;
+            width: 30%; 
+			top: 0;
+            left: 0;
+			padding: 10px;
+			overflow: auto;
+            background-color: #efdfd6;
+			font-family: 'Long Cang', cursive;
+            font-family: 'Oswald', sans-serif;
+			margin-left: 40px;
+        }
+		
+		.SnF-container {
+			display: flex;
+		}
+		
+		.search-bar{
+			margin-top: 8px;
+			margin-left: 10px;
+			width: 60%;
+			max-width: 500px;
+			background: rgba(255, 255, 255, 0.2);
+			border-radius: 60px;
+			padding: 10px 10px;
+		}
+	
+		.search-bar input{
+			background: transparent;
+			border: 0;
+			outline: none;
+			padding: 2px 2px;
+			font-size:20px;
+			color: #816955;
+
+		}
+		
+		::placeholder{
+			color: #816955;
+		}
+		
+		.search-bar button img{
+			width:  25px;
+			height: 25px;
+		
+		}
+		
+		.search-bar button{
+			margin-left: 5px;
+			border: 0;
+			border-radius: 50%;
+			width: 35px;
+			height: 35px;
+			background: #816955;
+			cursor: pointer;
+			float: right;
+		}
+		
+		.store-container {
+			border: 3px solid #331209;
+			padding: 10px;
+			margin-bottom: 20px;
+			background-color: #f9f9f9;
+		}
+
+		.name {
+			color: #483c32;
+			font-size: 20px;
+			margin-bottom: 5px;
+		}
+
+		.state {
+			color: #816955;
+			font-style: italic;
+			margin-bottom: 10px;
+		}
+
+		.address {
+			color: #816955;
+			font-size: 16px;
+		}
+
+		.contact {
+			color: #816955;
+			font-size: 14px;
+		}
+
+		.detail-title {
+			color: #483c32;
+			margin-top: 10px;
+			font-weight: bold;
+		}
+		
+		.hours{
+			color: #816955;
+		}
+		
+		.coordinates {
+			display: none;
+		}
+		
+		.vc_general.vc_btn3 {
+			margin-top: 10px;
+			display: inline-block;
+			padding: 10px 20px;
+			border: 2px solid #816955;
+			background-color: #816955;
+			color: white;
+			text-decoration: none;
+			border-radius: 5px;
+			transition: background-color 0.3s, color 0.3s;
+		}
+
+		.vc_general.vc_btn3:hover {
+			background-color: #f0dbbb;
+			color: #816955;
+		}
+				
+        .right-section {
+            flex: 1;	
+            background-color: white;
+			padding: 10px;
+			font-family: 'Long Cang', cursive;
+            font-family: 'Oswald', sans-serif;
+        }
+
+		.filter-button {
+			margin-top: 20px;
+			margin-left: 90px;
+			font-family: 'Long Cang', cursive;
+			font-family: 'Oswald', sans-serif;
+		}
+
+		.filter-button button {
+			padding: 8px 12px;
+			border: none;
+			background-color: #816955;
+			color: white;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		.filter-options {
+			display: none;
+			margin-top: 5px;
+			font-family: 'Long Cang', cursive;
+			font-family: 'Oswald', sans-serif;
+		}
+
+		.filter-button.active .filter-options {
+			display: block;
+		}
+
+        #map { 
+            width: 100%;
+            height: calc(100vh - 40px);
+        }
+    </style>
+</head>
+<body>
+	<!--header-->
+    <header class="navheader">
+		<a href="./index.html" class="logo"><img src="image/577092ec-e66b-43bd-b86f-e49147e5f410.jpg" alt=""></a>
+		<div class="menu-icon" id="menu-icon"></div>
+			<ul class="navbar">
+				<li><a href="./index.html">HOME</a></li>
+				<li><a href="./AboutUs.html">ABOUT US</a></li>
+				<li><a href="./signatureblend.html">OUR COFFEE</a></li>
+				<li><a href="./menu.html">OUR MENU</a></li>
+				<li><a href="./C_stores_1.html">OUR STORE</a></li>
+				<li><a href="./C_Rewards_1.html">REWARDS</a></li>
+				<li><a href="./MyPage.html">ACCOUNT</a></li>
+				<li><a href="./contactuspage.html">CONTACT US</a></li>
+			</ul>
+	</header>
+	
+    <div id="top">
+        <h2>Explore Our Outlets</h2>
+        <p>On the hunt for a caffeine kick? Step into our stores designed to whisk away the dull moments. Welcome, caffeine lovers!</p>
+        <br>
+        <h2>666 Stores across in Malaysia</h2>
+    </div>
+	
+    <div class="container">
+        <div class="left-section">
+		<div class="SnF-container">
+			<form action="https://www.google.com/search" method="get" class="search-bar">
+				<input type="text" placeholder="find the nearest store" name="q">
+				<button type="submit">
+				<img src="image/search-icon.png" alt="This is a search-icon pic">
+				</button>
+			</form>
+			
+			 <div class="filter-button">
+				<button id="filterBtn">Filter</button>
+				<div class="filter-options">
+					<label for="open24hours">
+						<input type="checkbox" id="open24hours" name="open24hours"> 24 Hours
+					</label>
+					<label for="driveThru">
+						<input type="checkbox" id="driveThru" name="driveThru"> Drive-Thru
+					</label>
+        </div>
+    </div>
+		</div>
+			
+			<br>
+			
+				<div class="stores-container list">
+					<div class="store-container">
+					<div class="store-name-state">
+						<h3 class="name">AEON Mall Nilai</h3>
+						<p class="state">Negeri Sembilan</p>          
+					</div>
+					<div class="store-details">
+						<div>
+							<h4 class="address detail-title">ADDRESS</h4>
+							<p class="address address-value">Lot G36, Ground Floor, AEON Nilai, Persiaran Pusat Bandar, Putra Point, 71800 Bandar Baru Nilai</p>
+						</div>
+						<div>
+							<h4 class="contact detail-title">CONTACT</h4>
+							<p class="contact">Tel: ‎+606 850 8788</p>
+						</div>
+						<div>
+							<h4 class="detail-title">HOURS</h4>
+							<div class="hours">
+									Sunday - Thursday: 10:00AM – 10:00PM<br />
+									Friday & Saturday: 10:00AM - 10:30PM</p>
+							</div>
+						</div>
+							 <div>
+							 <a href="https://www.google.com/maps/place/AEON+Mall+Nilai/@2.8175774,101.7892427,18.87z/data=!4m12!1m6!3m5!1s0x31cdc69867a1d0b7:0xfe64da48ac02217!2sThe+Body+Shop+AEON+Nilai+Mall!8m2!3d2.8176514!4d101.7897704!3m4!1s0x31cdc72f01ddafeb:0xe6de3561e384ca0a!8m2!3d2.8177873!4d101.7893419" class="vc_general vc_btn3" target="_blank">GET DIRECTIONS</a>
+							 </div>
+				   </div>
+				 			<div class="coordinates hidden">
+								<span class="lat">2.817851</span>
+								<span class="lng">101.789334</span>
+							</div>
+				</div>
+					 
+					  <div class="store-container">
+						<div class="store-name-state">
+							<h3 class="name">Arcoris Mon't Kiara</h3>
+							<p class="state">Kuala Lumpur</p>
+							
+						</div>
+						<div class="store-details">
+							<div>
+								<h4 class="address detail-title">ADDRESS</h4>
+								<p class="address address-value">Lot G-12 & G-13  Ground Level, Arcoris  No. 10, Jalan Kiara, Mont Kiara  50480 Kuala Lumpur</p>
+							</div>
+							<div>
+								<h4 class="contact detail-title">CONTACT</h4>
+								<p class="contact">Tel: +603 6411 7803</p>
+															</div>
+							<div>
+								<h4 class="detail-title">HOURS</h4>
+							<div class="hours">
+									Monday - Sunday: 8:00AM – 10:00PM</p>
+							</div>
+							</div>
+							<div>
+								<a href="https://www.google.com/maps/place/Arcoris+Mont'+Kiara/@3.1681505,101.6504599,17z/data=!3m1!4b1!4m5!3m4!1s0x31cc48f33f2904e1:0x3a97ab184711e40b!8m2!3d3.1681505!4d101.6526539" class="vc_general vc_btn3" target="_blank">GET DIRECTIONS</a>
+							</div>
+						</div>
+												<div class="coordinates hidden">
+								<span class="lat">3.167998</span>
+								<span class="lng">101.651330</span>
+							</div>
+							
+
+					</div>
+						<div class="store-container">
+						<div class="store-name-state">
+							<h3 class="name">Auto City</h3>
+							<p class="state">Penang</p>
+
+						</div>
+						<div class="store-details">
+							<div>
+								<h4 class="address detail-title">ADDRESS</h4>
+								<p class="address address-value">1808-1809E, Jalan Perusahaan, Auto-City North-South Highway Juru Interchange, 13600 Prai</p>
+							</div>
+							<div>
+								<h4 class="contact detail-title">CONTACT</h4>
+								<p class="contact">Tel: +604 305 6565</p>
+															</div>
+							<div>
+								<h4 class="detail-title">HOURS</h4>
+								<div class="hours">
+									Monday - Sunday: 8:00AM - 11:00PM</p>
+							</div>
+							</div>
+							<div>
+								<a href="https://www.google.com/maps/place/San+francisco+Coffee+@+Juru+AutoCity/@5.338352,100.4284404,19z/data=!3m1!4b1!4m5!3m4!1s0x304ac71f9d256425:0x86dffd7ab2dd17e6!8m2!3d5.338352!4d100.4289889" class="vc_general vc_btn3" target="_blank">GET DIRECTIONS</a>
+							</div>
+						</div>
+												<div class="coordinates hidden">
+								<span class="lat">5.338305</span>
+								<span class="lng">100.428816</span>
+							</div>
+							
+
+					</div>
+							<div class="store-container">
+						<div class="store-name-state">
+							<h3 class="name">Ayer@8</h3>
+							<p class="state">Putrajaya</p>
+
+		
+						</div>
+						<div class="store-details">
+							<div>
+								<h4 class="address detail-title">ADDRESS</h4>
+								<p class="address address-value">Unit A2-G-3A, Ayer @8, Presint 8, 62250 Wilayah Persekutuan Putrajaya</p>
+							</div>
+							<div>
+								<h4 class="contact detail-title">CONTACT</h4>
+								<p class="contact">Tel: +603 8861 2080</p>
+															</div>
+							<div>
+								<h4 class="detail-title">HOURS</h4>
+							<div class="hours">
+									Sunday - Thursday: 8:00AM - 10:00PM<br />
+									Friday & Saturday: 8:00AM - 11:00PM</p>
+							</div>
+							</div>
+							<div>
+								<a href="https://goo.gl/maps/a8uRbDW2Kvsi7jVDA" class="vc_general vc_btn3" target="_blank">GET DIRECTIONS</a>
+							</div>
+						</div>
+												<div class="coordinates hidden">
+								<span class="lat">2.9253630</span>
+								<span class="lng">101.6801958</span>
+							</div>
+							
+
+							</div>
+		
+			     </div>
+		</div>
+		
+        <div class="right-section">
+			<div id="map"></div>
+			<script
+			  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+			  defer
+			></script>
+		</div>
+ 
+	</div>
+	
+	<!--footer-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <footer class="footer">
+        <div class="content">
+            <div class="Company">
+                <h2>Our Company</h2>
+                    <a href="./AboutUs.html">About Us</a>
+                    <br>
+                    <a href="./signatureblend.html">Our Coffee</a>
+                    <br>
+                    <a href="./menu.html">Our Menu</a>
+                    <br>
+                    <a href="./C_stores_1.html">Our Store</a>
+            </div>
+            <div class="Terms">
+                <h2>Site Terms</h2>
+                    <a href="./tnc.html">Terms & Conditions</a>
+                    <br>
+                    <a href="./PP.html">Privacy Policy</a>
+                </ul>
+            </div>
+            <div class="Customer">
+                <h2>Customer Care</h2>
+                    <a href="./contactuspage.html">Contact Us</a>
+                    <br>
+                    <a href="./C_Rewards_1.html">Rewards</a>
+            </div>
+            <div class="Social">
+                <h2>Follow Us</h2>
+                    <a href="https://www.facebook.com/chan.zhichung.52/" class="fa fa-facebook"></a>
+                    <a href="https://www.instagram.com/zchung._/" class="fa fa-instagram"></a>
+                    <a href="https://twitter.com/?lang=en" class="fa fa-twitter"></a>
+                    <a href="https://www.pinterest.com/chanzhichung101/" class="fa fa-pinterest"></a>
+                <p>For support requests please follow the links on our Contact Us page</p>
+                
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            <p>© Café Serenity Coffee Company Sdn Bhd (489678-H). All rights reserved.</p>
+        </div>
+    </footer>
+	
+</body>
+</html>

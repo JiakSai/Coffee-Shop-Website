@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="./css/footerstyle.css">
+    <link rel="stylesheet" href="./css/navstyle.css">
+    <script src="./js/menu.js" defer></script>
+    
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        .new{
+            padding: 30px;
+            padding-bottom: 110px;
+        }
+        
+        .new h3{
+            font-size: 48px;
+            padding-left: 83px;
+        }
+
+        .new p{
+            font-size: 24px;
+            padding-left: 83px;
+        }
+
+        .content{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-items: center;
+            gap: 15px;
+        }
+
+        .image-container{
+            transform: translate(-50% -50%);
+            width: 100%;
+            position: relative;
+            box-shadow: gray 0px 10px 20px;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        .image-container img{
+            height: 400px;
+            width: 100%;
+            padding: 15px;
+        }
+
+        .overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            background-color: rgb(0, 0, 0, 0.4);
+        }
+
+        .overlaytxt{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            font-size: 48px;
+            font-weight: 900;
+        }
+
+        .image-container:hover .overlay{
+            opacity: 0.8;
+        }
+
+        /*Menu*/
+        .menu{
+            padding: 30px;
+        }
+        
+        .menu b{
+            font-size: 36px;
+            padding-right: 160px;
+        }
+
+        .tabs {
+            display: grid;
+            grid-template-columns: 3fr 1fr 1fr 1fr;
+            justify-items: center;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .tab {
+            cursor: pointer;
+            padding: 10px;
+            font-size: 24px;
+            width: 100%;
+        }
+
+        .tab:hover {
+            font-weight: 900;
+        }
+    
+
+        .tab-content {
+            display: none;
+            text-align: left;
+            padding-top: 20px;
+            font-size: 30px;
+        }
+
+        .cont{
+            padding-top: 30px;
+            width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .gallery{
+            margin: 15px;
+            float: left;
+            width: 300px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+        }
+
+        .desc{
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .desc img{
+            width: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!--header-->
+    <header class="navheader">
+        <a href="./index.html" class="logo"><img src="image/577092ec-e66b-43bd-b86f-e49147e5f410.jpg" alt=""></a>
+        <div class="menu-icon" id="menu-icon"></div>
+            <ul class="navbar">
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="./AboutUs.html">ABOUT US</a></li>
+                <li><a href="./signatureblend.html">OUR COFFEE</a></li>
+                <li><a href="./menu.html">OUR MENU</a></li>
+                <li><a href="./C_stores_1.html">OUR STORE</a></li>
+                <li><a href="./C_Rewards_1.html">REWARDS</a></li>
+                <li><a href="./MyPage.html">ACCOUNT</a></li>
+                <li><a href="./contactuspage.html">CONTACT US</a></li>
+            </ul>
+    </header>
+
+    <!--new release-->
+    <div class="new">
+        <h3>New Release</h3>
+        <p>Artisan Elegance, Engineered for Comfort</p>
+        <br>
+        <div class="content">
+        <div class="image-container">
+            <img src="image/700.jpg" alt=" ">
+            <div class="overlay">
+                <div class="overlaytxt">Pumpkin Latte</div>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img src="image/coffee-with-cinnamon-side-view_141793-3253.jpg" alt="">
+            <div class="overlay">
+                <div class="overlaytxt">Cinnamon Cappuccino</div>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img src="image/moka.jpg" alt="">
+            <div class="overlay">
+                <div class="overlaytxt">Chocolate Chips Mocha</div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!--menu-->
+    <div class="menu">
+        <div class="tabs">
+            <b>Menu</b>
+            <div class="tab" onclick="showContent('coffee')">Coffee & Espresso</div>
+            <div class="tab" onclick="showContent('chocolate')">Chocolate & Tea</div>
+            <div class="tab" onclick="showContent('frappuccino')">Frappuccino</div>
+        </div>
+        
+        <div id="coffee" class="tab-content active">
+            <h2 style="padding-left: 150px;">Coffee & Espresso</h2>
+            <div class="cont">
+                <div class="gallery">
+                    <img src="image/ame.jpg" alt="">
+                    <div class="desc">Americano
+                        <img src="image/menu_cold.png" alt=""> <img src="image/menu_hot.png" alt="">
+                    </div>
+                </div>
+
+                <div class="gallery">
+                    <img src="image/iced ame.webp" alt="">
+                    <div class="desc">Matcha Foam Iced Americano
+                        <img src="image/menu_cold.png" alt="">
+                    </div>
+                </div>
+
+                <div class="gallery">
+                    <img src="image/coldbrew.webp" alt="">
+                    <div class="desc">Cold Brew
+                        <img src="image/menu_cold.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="cont">
+                <div class="gallery">
+                    <img src="image/vanil cold brew.jpg" alt="">
+                    <div class="desc">Vanilla Cream Cold Brew
+                        <img src="image/menu_cold.png" alt="">
+                    </div>
+                </div>
+
+                <div class="gallery">
+                    <img src="image/latte.jpg" alt="">
+                    <div class="desc">Caffe Latte
+                        <img src="image/menu_cold.png" alt=""> <img src="image/menu_hot.png" alt="">
+                    </div>
+                </div>
+
+                <div class="gallery">
+                    <img src="image/mocha.jpg" alt="">
+                    <div class="desc">Caffe Mocha
+                        <img src="image/menu_cold.png" alt=""> <img src="image/menu_hot.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="cont">
+                <div class="gallery">
+                    <img src="image/cappuccino.jpg" alt="">
+                    <div class="desc">Cappuccino
+                        <img src="image/menu_cold.png" alt=""> <img src="image/menu_hot.png" alt="">
+                    </div>
+                </div>
+
+                <div class="gallery">
+                    <img src="image/cocoa.webp" alt="">
+                    <div class="desc">Cocoa Cappuccino
+                        <img src="image/menu_cold.png" alt=""> <img src="image/menu_hot.png" alt="">
+                    </div>
+                </div>
+
+                <div class="gallery">
+                    <img src="image/espresso.jpg" alt="">
+                    <div class="desc">DoubleShot Espresso
+                        <img src="image/menu_cold.png" alt=""> <img src="image/menu_hot.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="cont">
+                <div class="gallery">
+                    <img src="image/iced espresso.webp" alt="">
+                    <div class="desc">Foam Iced Espresso
+                        <img src="image/menu_cold.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="chocolate" class="tab-content">
+            <h2 style="padding-left: 170px;">Chocolate & Tea</h2>
+                <div class="cont">
+                    <div class="gallery">
+                        <img src="image/choclate.jpg" alt="">
+                        <div class="desc">Hot Chocolate
+                            <img src="image/menu_hot.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="gallery">
+                        <img src="image/hazelnutchoc.jpg" alt="">
+                        <div class="desc">Hazelnut Hot Chocolate
+                            <img src="image/menu_hot.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="gallery">
+                        <img src="image/caramel choc.jpg" alt="">
+                        <div class="desc">Caramel Hot Chocolate
+                            <img src="image/menu_hot.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+            <div class="cont">
+                <div class="gallery">
+                    <img src="image/greentea.jpg" alt="">
+                    <div class="desc">Green Tea Latte 
+                        <img src="image/menu_cold.png" alt=""> <img src="image/menu_hot.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="frappuccino" class="tab-content">
+            <h2 style="padding-left: 200px;">Frappuccino</h2>
+            <div class="cont">
+                <div class="gallery">
+                    <img src="image/espressofrap.jpg" alt="">
+                    <div class="desc">Espresso Frappuccino
+                        <img src="image/menu_cold.png" alt="">
+                    </div>
+                </div>
+
+                <div class="gallery">
+                    <img src="image/caramelfrap.jpg" alt="">
+                    <div class="desc">Caramel Frappuccino
+                        <img src="image/menu_cold.png" alt="">
+                    </div>
+                </div>
+
+                <div class="gallery" style="box-shadow: none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--footer-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <footer class="footer">
+        <div class="content">
+            <div class="Company">
+                <h2>Our Company</h2>
+                    <a href="./AboutUs.html">About Us</a>
+                    <br>
+                    <a href="./signatureblend.html">Our Coffee</a>
+                    <br>
+                    <a href="./menu.html">Our Menu</a>
+                    <br>
+                    <a href="./C_stores_1.html">Our Store</a>
+            </div>
+            <div class="Terms">
+                <h2>Site Terms</h2>
+                    <a href="./tnc.html">Terms & Conditions</a>
+                    <br>
+                    <a href="./PP.html">Privacy Policy</a>
+                </ul>
+            </div>
+            <div class="Customer">
+                <h2>Customer Care</h2>
+                    <a href="./contactuspage.html">Contact Us</a>
+                    <br>
+                    <a href="./C_Rewards_1.html">Rewards</a>
+            </div>
+            <div class="Social">
+                <h2>Follow Us</h2>
+                    <a href="https://www.facebook.com/chan.zhichung.52/" class="fa fa-facebook"></a>
+                    <a href="https://www.instagram.com/zchung._/" class="fa fa-instagram"></a>
+                    <a href="https://twitter.com/?lang=en" class="fa fa-twitter"></a>
+                    <a href="https://www.pinterest.com/chanzhichung101/" class="fa fa-pinterest"></a>
+                <p>For support requests please follow the links on our Contact Us page</p>
+                
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            <p>© Café Serenity Coffee Company Sdn Bhd (489678-H). All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

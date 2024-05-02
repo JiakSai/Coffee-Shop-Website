@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Voucher</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/footerstyle.css">
+    <link rel="stylesheet" href="./css/navstyle.css">
+    <style>
+        
+        body{
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        #id-profile,
+        #id-content,
+        #coupon{
+            background-color: #f0dbbb;
+        }
+        #id-profile {
+            text-align: center;
+        }
+
+        .id-image {
+            display: inline-block;
+        }
+
+        .id-image img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .id-image h3 {
+            text-align: center;
+            margin-bottom: 2px;
+        }
+
+        .id-image p {
+            text-align: center;
+            margin-top: 2px;
+            margin-bottom: 10px;
+        }
+
+        .header .logo img {
+            border-radius: 0;
+        }
+        
+        .col-content {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            max-width: 200px;
+            padding: 15px;
+        }
+
+        figcaption {
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        #id-content .col-content img {
+            width: 100%;
+            max-width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border: 2px solid #000;
+            border-radius: 10px;
+        }
+
+        .content-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        figcaption{
+		    font-weight: bold;
+	    }
+
+        #coupon{
+            display: flex;
+            justify-content: center;
+        }
+
+        .main-container{
+            display: inline-block;
+            border: 5px dotted #816955 ;
+            width: 80%;
+            border-radius: 15px;
+            margin: 0 10px;
+            max-width: 300px;
+            text-align: center;
+            background-color: #f9e8db;
+            margin-bottom: 10px;
+        }
+
+        .container{
+            padding: 2px 15px;
+            background-color: #f9e8db;
+        }
+
+        .promo{
+            background: #ccc;
+            padding: 3px;
+        }
+
+        img{
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        #logout {
+		    text-align: right;
+            background-color: #f0dbbb;
+	    }
+
+        #logout button {
+            background-color: transparent;
+            border: none;
+            text-align: center;
+            cursor: pointer;
+            width: 200px; /* Adjust the width to make it bigger */
+            padding: 10px; /* Add padding for better appearance */
+            font-size: 16px; /* Adjust the font size for better visibility */
+            color: #000; /* Set the text color */
+            outline: none; /* Remove the default button outline */
+            margin-left: auto; /* Push the button to the far right */
+        }
+
+
+    </style>
+</head>
+
+<header class="navheader">
+	<a href="./index.html" class="logo"><img src="image/577092ec-e66b-43bd-b86f-e49147e5f410.jpg" alt=""></a>
+	<div class="menu-icon" id="menu-icon"></div>
+		<ul class="navbar">
+			<li><a href="./index.html">HOME</a></li>
+			<li><a href="./AboutUs.html">ABOUT US</a></li>
+			<li><a href="./signatureblend.html">OUR COFFEE</a></li>
+			<li><a href="./menu.html">OUR MENU</a></li>
+			<li><a href="./C_stores_1.html">OUR STORE</a></li>
+			<li><a href="./C_Rewards_1.html">REWARDS</a></li>
+			<li><a href="./MyPage.html">ACCOUNT</a></li>
+			<li><a href="./contactuspage.html">CONTACT US</a></li>
+		</ul>
+</header>
+
+<body>
+    <section id="main-tran">
+        <section id="id-profile">
+            <div class="id-image">
+                <a href="MyPage.html">
+                    <div class="id-image">
+                        <img src="image/MyPage01.png">
+                        <h3>Sarah Ann</h3>
+                        <p>ID: 01234567890123456</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="id-content">
+            <div class="content-container">
+                <div class="col-content">
+                    <a href="TransactionHistory.html">
+                        <figure>
+                            <img src="image/Transaction History Icon.png" alt="Transaction History">
+                            <figcaption>Transaction History</figcaption>
+                        </figure>
+                    </a>
+                </div>
+                <div class="col-content">
+                    <a href="MyVoucher.html">
+                        <figure>
+                            <img src="image/My Voucher icon.png" alt="My Vouchers">
+                            <figcaption>My Vouchers</figcaption>
+                        </figure>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="coupon">
+            <div class="main-container">
+            <img src="image/MyVoucher01.jpeg" >
+                <div class="container">
+                    <h2><b>BIRTHDAY COUPON</b></h2>
+                    <h>Celebrate your special day with us! Enjoy a free regular cup of coffee of 
+                        your choice with no minimum spending required.
+                    </h>
+                </div>
+                <div class="container">
+                    <p>Use Code: <span class="code">B1032H</span></p>
+                    <p style="color: red;">Valid: 01.03.2024-30.03.2024</p>
+                </div>
+            </div>
+            <div class="main-container">
+            <img src="image/MyVoucher02.jpg">
+                <div class="container">
+                    <h2><b>20% OFF YOUR 2ND ITEM</b></h2>
+                    <h>Grab your favourite coffee and get a fantastic discount on your second item!
+                    </h>
+                </div>
+                <div class="container">
+                    <p>Use Code: <span class="code">F3827B</span></p>
+                    <br>
+                    <p style="color: red;">Valid: 01.03.2024-30.03.2024</p>
+                </div>
+            </div>
+            <div class="main-container">
+                <img src="image/MyVoucher03.jpg">
+                    <div class="container">
+                        <h2><b>WELCOME TO THE FAMILY!</b></h2>
+                        <h>As a warm welcome, enjoy a complimentary regular-sized coffee of your choice on 
+                            your first visit! 
+                        </h>
+                    </div>
+                    <div class="container">
+                        <p>Use Code: <span class="code">WELCOME3421</span></p>
+                        <p style="color: red;">Valid: for first-time customers</p>
+                    </div>
+                </div>
+        </section>
+
+        <section id="logout">
+            <a href="login.html" class="btn-logout">
+                <button type="button">
+                    <span class="fas fa-arrow-right-from-bracket"></span> Log out
+                </button>
+            </a>
+        </section>
+
+    <!--footer-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <footer class="footer">
+        <div class="content">
+            <div class="Company">
+                <h2>Our Company</h2>
+                    <a href="./AboutUs.html">About Us</a>
+                    <br>
+                    <a href="./signatureblend.html">Our Coffee</a>
+                    <br>
+                    <a href="./menu.html">Our Menu</a>
+                    <br>
+                    <a href="./C_stores_1.html">Our Store</a>
+            </div>
+            <div class="Terms">
+                <h2>Site Terms</h2>
+                    <a href="./tnc.html">Terms & Conditions</a>
+                    <br>
+                    <a href="./PP.html">Privacy Policy</a>
+                </ul>
+            </div>
+            <div class="Customer">
+                <h2>Customer Care</h2>
+                    <a href="./contactuspage.html">Contact Us</a>
+                    <br>
+                    <a href="./C_Rewards_1.html">Rewards</a>
+            </div>
+            <div class="Social">
+                <h2>Follow Us</h2>
+                    <a href="https://www.facebook.com/chan.zhichung.52/" class="fa fa-facebook"></a>
+                    <a href="https://www.instagram.com/zchung._/" class="fa fa-instagram"></a>
+                    <a href="https://twitter.com/?lang=en" class="fa fa-twitter"></a>
+                    <a href="https://www.pinterest.com/chanzhichung101/" class="fa fa-pinterest"></a>
+                <p>For support requests please follow the links on our Contact Us page</p>
+                
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            <p>© Café Serenity Coffee Company Sdn Bhd (489678-H). All rights reserved.</p>
+        </div>
+    </footer>
+</body>

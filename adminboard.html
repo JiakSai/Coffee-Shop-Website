@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/AdminNavstyle.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        body{
+            min-height: 100vh;
+            background-image: linear-gradient(to right, #f0dbbb, #ddc0a5, #bda17e);
+        }
+
+        .container{
+            position: relative;
+            width: 100%;
+        }
+
+        .cardBox{
+            position: relative;
+            width: 100%;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+        }
+
+        .cardBox .card{
+            position: relative;
+            background: #fbf5e0;
+            padding: 30px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            margin: 15px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+            cursor: pointer;
+        }
+
+        .cardBox .card .num{
+            position: relative;
+            font-weight: 500;
+            font-size: 2.5em;
+            color: #816955;
+        }
+
+        .cardBox .card .cardName{
+            color: #816955;
+            font-size: 1.2em;
+            margin-top: 5px;
+        }
+
+        .cardBox .card .iconbox{
+            font-size: 3.5em;
+            color: gray;
+        }
+
+        .cardBox .card:hover{
+            transform: scale(1.03);
+        }
+
+        .details{
+            position: relative;
+            width: 100%;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-gap: 30px;
+            margin-top: 10px;
+        }
+
+        .details .orders{
+            position: relative;
+            min-height: 500px;
+            padding: 20px;
+            margin-left: 15px;
+            border-radius: 6px;
+            background-color: #fbf5e0;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+        }
+
+        .details .orders .header{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .details .orders .header{
+            padding-left: 7px;
+            font-weight: 600;
+            color: #816955;
+        }
+
+        .details table{
+            width: 100%;
+            height: 5px;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .details table thead td{
+            font-weight: 600;
+        }
+
+        .details .orders table tr{
+            color: #816955;
+            border-bottom: 1px solid rgba(0,0,0.1);
+        }
+
+        .details .orders table tr:last-child{
+            border-bottom: none;
+        }
+
+        .details .orders table tbody tr:hover{
+            background: #816955;
+            color: #f0dbbb;
+        }
+
+        .details .orders table tr td{
+            padding: 10px;
+        }
+
+        .details .orders table tr td:nth-child(3)
+        {
+            text-align: center;
+        }
+
+        .details .orders table tr td:nth-child(4)
+        {
+            text-align: center;
+        }
+
+        .details .orders table tr td:nth-child(5)
+        {
+            text-align: center;
+        }
+
+        .details .orders table tr td:last-child
+        {
+            text-align: center;
+        }
+
+        .user{
+            position: relative;
+            min-height: 500px;
+            padding: 20px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+            border-radius: 6px;
+            background-color: #fbf5e0;
+            margin-right: 14px;
+        }
+
+        .user .header{
+            font-weight: 600;
+            color: #816955;
+        }
+
+        .user table tr{
+            height: 10px;
+        }
+
+        .user table tr{
+            border-bottom: 1px solid #816955;
+            border-left: 1px solid #816955;
+            height: 5px;
+        }
+
+        .user table tr:hover{
+            background: #816955;
+            color: #f0dbbb;
+        }
+
+        .user table tr td{
+            padding: 12px 10px;
+        }
+
+        .user table tr td h4{
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .user table tr td h4 span{
+            font-size: 14px;
+            color: #bda17e;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="nav">
+        <div class="sidebar">
+            <a href="adminboard.html"><img src="image/577092ec-e66b-43bd-b86f-e49147e5f410.jpg"></a>
+            <ul>
+                <li><a href="./A_staff.html"><i class="fas fa-id-card"></i>Staff Page</a></li>
+                <li><a href="./A_user.html"><i class="fas fa-user"></i>User Page</a></li>
+                <li><a href="./A_menu_1.html"><i class="fas fa-mug-hot"></i>Menu Page</a></li>
+                <li><a href="./adminsales.html"><i class="fas fa-bar-chart"></i>Sales Page</a></li>
+                <li><a href="./A_stores_1.html"><i class="fas fa-location-pin"></i>Store Location Page</a></li>
+                <li><a href="./A_rewards_1.html"><i class="fas fa-award"></i>Rewards Page</a></li>
+                <li><a href="./A_voucher.html"><i class="fas fa-ticket"></i>Voucher Page</a></li>
+                <li><a href="./adminlogin.html"><i class="fas fa-arrow-right-from-bracket"></i>Logout</a></li>
+            </ul>
+        </div>
+
+            <div class="main-content">
+                <div class="cardBox">
+                    <a href="A_user.html">
+                        <div class="card">
+                            <div>
+                                <div class="num">1</div>
+                                <div class="cardName">User</div>
+                            </div>
+                            <div class="iconbox">
+                                <i class='bx bx-user' ></i>                        
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="A_staff.html">
+                        <div class="card">
+                            <div>
+                                <div class="num">2</div>
+                                <div class="cardName">Staff</div>
+                            </div>
+                            <div class="iconbox">
+                                <i class='bx bx-group'></i>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="A_rewards_1.html">
+                        <div class="card">
+                            <div>
+                                <div class="num">2</div>
+                                <div class="cardName">Active Rewards</div>
+                            </div>
+                            <div class="iconbox">
+                                <i class='bx bx-gift' ></i>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="adminsales.html">
+                        <div class="card">
+                            <div>
+                                <div class="num">2,000</div>
+                                <div class="cardName">Sales</div>
+                            </div>
+                            <div class="iconbox">
+                                <i class='bx bx-dollar'></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="details">
+                    <div class="orders">
+                        <div class="header">
+                            <h2>Order History</h2>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Customer Name</td>
+                                    <td>Product Name</td>
+                                    <td>Quantity</td>
+                                    <td>Date</td>
+                                    <td>Receipt No</td>
+                                    <td>Total Price</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Sarah Ann</td>
+                                    <td>Cold Brew</td>
+                                    <td>2</td>
+                                    <td>2024-01-07</td>
+                                    <td>345678</td>
+                                    <td>RM25.75</td>
+                                </tr>
+                                <tr>
+                                    <td>Sarah Ann</td>
+                                    <td>Caffe Americano</td>
+                                    <td>2</td>
+                                    <td>2024-01-06</td>
+                                    <td>789012</td>
+                                    <td>RM30.50</td>
+                                </tr>
+                                <tr>
+                                    <td>Sarah Ann</td>
+                                    <td>Caffe Latte</td>
+                                    <td>4</td>
+                                    <td>2024-01-06</td>
+                                    <td>123456</td>
+                                    <td>RM50.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="user">
+                        <div class="header">
+                            <h2>Recent Customers</h2>
+                        </div>
+                        <table>
+                            <tr>
+                                <td><h4>Sarah Ann<br><span>Bronze</span></h4></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

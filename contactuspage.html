@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    .container{
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        background-color: #ddc0a5;
+    }
+
+    .heading h2{
+        margin-top: 30px;
+        text-align: center;
+        font-size: 28px;
+        font-weight: 600;
+    }
+
+    .heading p{
+        margin-top: 15px;
+        text-align: center;
+        font-size: 22px;
+        font-weight: 400px;
+        margin-bottom: 40px;
+
+    }
+
+    .wrap{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    h4{
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .supportchannel,
+    .hq,
+    .map{
+        height: 300px;
+        width: 320px;
+        margin: 10px;
+        background-color: #816955;
+        text-align: left;
+        color: white;
+        padding: 30px;
+        font-size: 18px;
+        border-radius: 6px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .map iframe{
+        height: 196px;
+        width: 260px;
+    }
+
+    .supportchannel img,
+    .hq img{
+        width: 20px;
+        height: 20px;
+        transform: translateY(30%);
+    }
+
+    .content2{
+        width: 100%;
+        background-color: white;
+        border-radius: 6px;
+        padding: 20px 80px 60px 80px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        margin-bottom: 50px;
+        margin-top: 20px;
+    }
+
+    form{
+        position: relative;
+        width: 100%;
+    }
+
+    .row1{
+        display: flex;
+        gap: 20px;
+    }
+
+    .inputbox{
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        width: 50%;
+    }
+
+    .row2 .inputbox{
+        width: 98%;
+    }
+
+    .inputbox label{
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-weight: 500;
+    }
+
+    .inputbox select{
+        padding: 10px;
+        font-size: 18px;
+        outline: none;
+        border: 1px solid #333;
+    }
+    .inputbox input{
+        padding: 10px;
+        font-size: 18px;
+        outline: none;
+        border: 1px solid #333;
+    }
+
+    .inputbox input:focus,
+    .inputbox select:focus,
+    .inputbox textarea:focus{
+        box-shadow: 0 0 10px #f0dbbb;
+    }
+
+    .inputbox textarea{
+        padding: 10px;
+        font-size: 18px;
+        outline: none;
+        border: 1px solid #333;
+        resize: none;
+        min-height: 220px;
+    }
+
+    .inputbox #submit{
+        background-color: #bda17e;
+        color: white;
+        border: none;
+        font-size: 18px;
+        font-weight: 500;
+        cursor: pointer;
+        padding: 14px 15px;
+        width: 120px;
+    }
+
+    label{
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .heading2 h2{
+        margin-top: 30px;
+        margin-bottom: 15px;
+        font-size: 28px;
+        font-weight: 600;
+    }
+</style>
+<head>
+    <title>Contact Us</title>
+</head>
+<body>
+    <!--header-->
+    <link rel="stylesheet" href="./css/navstyle.css">
+    <header class="navheader">
+        <a href="./index.html" class="logo"><img src="image/577092ec-e66b-43bd-b86f-e49147e5f410.jpg" alt=""></a>
+        <div class="menu-icon" id="menu-icon"></div>
+            <ul class="navbar">
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="./AboutUs.html">ABOUT US</a></li>
+                <li><a href="./signatureblend.html">OUR COFFEE</a></li>
+                <li><a href="./menu.html">OUR MENU</a></li>
+                <li><a href="./C_stores_1.html">OUR STORE</a></li>
+                <li><a href="./C_Rewards_1.html">REWARDS</a></li>
+                <li><a href="./MyPage.html">ACCOUNT</a></li>
+                <li><a href="./contactuspage.html">CONTACT US</a></li>
+            </ul>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <div class="heading">
+                <h2>Contact Us</h2>
+                <p>We would like to hear from you. Get in touch on any feedback, inquiries, or simply just to say hello.</p>
+            </div>
+    
+            <div class="wrap">
+                <div class="supportchannel">
+                    <h4>Our Support Channels</h4><br>
+                    <p><img src="image/tel.png">tel: +603-0000-0000</p>
+                    <P><img src="image/email.png">customerservice@companyname.com</P>
+                </div>
+    
+                <div class="hq">
+                    <h4>Our HQ</h4><br>
+                    <p>Company Name(M) Sdn Bhd</p><br>
+                    <p>Siti Hasmah Digital Library MMU Cyberjaya, Persiaran Multimedia, 63100 Cyberjaya, Selangor</p>
+                </div>
+
+                <div class="map">
+                    <h4>Our Location</h4><br>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d813.8147719976074!2d101.64137708264684!3d2.927514447586993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdb6e8f4ec47d5%3A0x8138562252103b79!2sLibrary!5e0!3m2!1sen!2smy!4v1705070180195!5m2!1sen!2smy" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                </div>
+            </div>
+            <br>
+    
+            <div class="content2">
+                <div class="heading2">
+                    <h2>Contact Information</h2>
+                </div>
+                <hr>
+                    <form class="form">
+                        <div class="row1">
+                            <div class="inputbox">
+                                <label>Feedback</label>
+                                <select>
+                                    <option value="--Select Feedback--">--Select Feedback--</option>
+                                    <option value="Service Quality">Service Quality</option>
+                                    <option value="Beverages Quality">Beverages Quality</option>
+                                </select>
+                            </div>
+
+                            <div class="inputbox">
+                                <label>Name</label>
+                                <input type="text" class="input">
+                            </div>
+                        </div>
+
+                        <div class="row1">
+                            <div class="inputbox">
+                                <label>Email</label>
+                                <input type="email" class="input">
+                            </div>
+
+                            <div class="inputbox">
+                                <label>Telephone</label>
+                                <input class="input" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="E.g. 012-345-6789">
+                            </div>
+                        </div>
+
+                        <div class="row1">
+                            <div class="inputbox">
+                                <label>Store</label>
+                                <select class="input">
+                                    <option>--Select Store--</option>
+                                    <option value="AEON Mall Nilai">AEON Mall Nilai</option>
+                                    <option value="Arcoris Mon't Kiara">Arcoris Mon't Kiara</option>
+                                    <option value="Auto City">Auto City</option>
+                                    <option value="Ayer@8">Ayer@8</option>
+                                </select>
+                            </div>
+
+                            <div class="inputbox">
+                            </div>
+                        </div>
+
+                        <div class="row1">
+                            <div class="inputbox">
+                                <label>Date</label>
+                                <input type="date" class="input">
+                            </div>
+
+                            <div class="inputbox">
+                                <label>Time of Visit</label>
+                                <input type="time" class="input">
+                            </div>
+                        </div>
+
+                        <div class="row2">
+                            <div class="inputbox">
+                                <label>Comment</label>
+                                <textarea rows="4" cols="60" placeholder="Write your comment here..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row2">
+                            <div class="inputbox">
+                                <input type="submit" id="submit">
+                            </div>
+                        </div>
+
+                    </form>
+            </div>
+        </div>
+    </div>
+    
+
+    <!--footer-->
+    <link rel="stylesheet" href="./css/footerstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <footer class="footer">
+        <div class="content">
+            <div class="Company">
+                <h2>Our Company</h2>
+                    <a href="./AboutUs.html">About Us</a>
+                    <br>
+                    <a href="./signatureblend.html">Our Coffee</a>
+                    <br>
+                    <a href="./menu.html">Our Menu</a>
+                    <br>
+                    <a href="./C_stores_1.html">Our Store</a>
+            </div>
+            <div class="Terms">
+                <h2>Site Terms</h2>
+                    <a href="./tnc.html">Terms & Conditions</a>
+                    <br>
+                    <a href="./PP.html">Privacy Policy</a>
+                </ul>
+            </div>
+            <div class="Customer">
+                <h2>Customer Care</h2>
+                    <a href="./contactuspage.html">Contact Us</a>
+                    <br>
+                    <a href="./C_Rewards_1.html">Rewards</a>
+            </div>
+            <div class="Social">
+                <h2>Follow Us</h2>
+                    <a href="https://www.facebook.com/chan.zhichung.52/" class="fa fa-facebook"></a>
+                    <a href="https://www.instagram.com/zchung._/" class="fa fa-instagram"></a>
+                    <a href="https://twitter.com/?lang=en" class="fa fa-twitter"></a>
+                    <a href="https://www.pinterest.com/chanzhichung101/" class="fa fa-pinterest"></a>
+                <p>For support requests please follow the links on our Contact Us page</p>
+                
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            <p>© Café Serenity Coffee Company Sdn Bhd (489678-H). All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

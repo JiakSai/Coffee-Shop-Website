@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Serenity</title>
+    <link rel="stylesheet" href="./css/footerstyle.css">
+    <link rel="stylesheet" href="./css/navstyle.css">
+
+    <style>
+
+        img{
+            width: 100%;
+        }
+        /*homestyle*/
+        .home-background{
+            background-image: url(image/pexels-photo-894695.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            min-height: 650px; 
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .home-background::before{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            z-index: 1;
+        }
+
+        .home-background .content{
+            width: 100%;
+            text-align: center;
+            color: white;
+            z-index: 2;
+        }
+
+        .home-background .content h1{
+            font-size: 60px;
+        }
+
+        .home-background .content p{
+            font-size: 24px;
+        }
+
+        .btn{
+            display: inline-block;
+            margin-top: 16px;
+            background-color: burlywood;
+            cursor: pointer;
+            color: #333;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        .btn:hover{
+            background-color: #816955;
+            color: var(--main-color);
+        }
+
+        /*home menu*/
+        .home-menu{
+            display: flex;
+            align-items: center;
+            gap: 175px;
+        }
+
+        .home-menu .image{
+            padding-top: 30px;
+            padding-left: 30px;
+            padding-bottom: 30px;
+            width: 50%;
+        }
+   
+        .home-menu h1{
+            font-size: 57px;
+        }
+
+        .home-menu p{
+            font-size: 24px;
+        }
+
+        /*home-coffee*/
+        .home-coffee{
+            background-color:#fbeed7;
+        }
+
+        .home-coffee .content{
+            padding-top: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        .home-coffee .content h1{
+            font-size: 45px;
+        }
+
+        .home-coffee .content p{
+            font-size: 22px;
+            padding-bottom: 30px;
+        }
+
+        .home-coffee .content .image-grid {
+            gap: 10px;
+            display: flex;
+            padding-bottom: 50px;
+            width: fit-content;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!--header-->
+    <header class="navheader">
+        <a href="./index.html" class="logo"><img src="image/577092ec-e66b-43bd-b86f-e49147e5f410.jpg" alt=""></a>
+        <div class="menu-icon" id="menu-icon"></div>
+            <ul class="navbar">
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="./AboutUs.html">ABOUT US</a></li>
+                <li><a href="./signatureblend.html">OUR COFFEE</a></li>
+                <li><a href="./menu.html">OUR MENU</a></li>
+                <li><a href="./C_stores_1.html">OUR STORE</a></li>
+                <li><a href="./C_Rewards_1.html">REWARDS</a></li>
+                <li><a href="./MyPage.html">ACCOUNT</a></li>
+                <li><a href="./contactuspage.html">CONTACT US</a></li>
+            </ul>
+    </header>
+</body>
+</html>
+
+    <!--home page(about us)-->
+    <div class="home-background">
+        <div class="content">
+            <h1>Awaken Your Senses, Embrace the Brew</h1>
+            <p>Immerse yourself in the aroma of globally sourced beans, savor every sip to the rhythm of our curated tunes. 
+                <br>Unwind and revel in the moment – because in our world, it's always coffee o'clock.</p>
+            <a href="AboutUs.html" class="btn"> KNOW MORE ABOUT US</a>
+        </div>
+    </div>
+
+    <!--home page(menu)-->
+    <div class="home-menu">
+        <div class="image">
+            <img src="image/pexels-photo-302898.webp" alt="">
+        </div>
+
+        <div class="content">
+            <h1>Indulge Your Senses, 
+                <br>Elevate Your Day</h1>
+            <p>Sip, Savor, and Explore our Flavorful World of Brews!</p>
+            <a href="menu.html" class="btn">FIND OUT OUR MENU</a>
+        </div>
+    </div>
+
+    <!--home page(coffee)-->
+    <div class="home-coffee">
+        <div class="content">
+            <h1>New Release</h1>
+            <p>Brewing Perfection, Sipping Satisfaction </p>
+            <div class="image-grid">
+                <div class="image1">
+                    <img src="image/700.jpg" alt="">
+                    <p><b>Pumpkin Latte</b></p>
+                </div>
+                <div class="image2">
+                    <img src="image/coffee-with-cinnamon-side-view_141793-3253.jpg" alt="">
+                    <p><b>Cinnamon Cappuccino</b></p>
+                </div>
+                <div class="image3">
+                    <img src="image/moka.jpg" alt="">
+                    <p><b>Chocolate Chips Mocha</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--footer-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <footer class="footer">
+        <div class="content">
+            <div class="Company">
+                <h2>Our Company</h2>
+                    <a href="./AboutUs.html">About Us</a>
+                    <br>
+                    <a href="./signatureblend.html">Our Coffee</a>
+                    <br>
+                    <a href="./menu.html">Our Menu</a>
+                    <br>
+                    <a href="./C_stores_1.html">Our Store</a>
+            </div>
+            <div class="Terms">
+                <h2>Site Terms</h2>
+                    <a href="./tnc.html">Terms & Conditions</a>
+                    <br>
+                    <a href="./PP.html">Privacy Policy</a>
+                </ul>
+            </div>
+            <div class="Customer">
+                <h2>Customer Care</h2>
+                    <a href="./contactuspage.html">Contact Us</a>
+                    <br>
+                    <a href="./C_Rewards_1.html">Rewards</a>
+            </div>
+            <div class="Social">
+                <h2>Follow Us</h2>
+                    <a href="https://www.facebook.com/chan.zhichung.52/" class="fa fa-facebook"></a>
+                    <a href="https://www.instagram.com/zchung._/" class="fa fa-instagram"></a>
+                    <a href="https://twitter.com/?lang=en" class="fa fa-twitter"></a>
+                    <a href="https://www.pinterest.com/chanzhichung101/" class="fa fa-pinterest"></a>
+                <p>For support requests please follow the links on our Contact Us page</p>
+                
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            <p>© Café Serenity Coffee Company Sdn Bhd (489678-H). All rights reserved.</p>
+        </div>
+    </footer>
+</body> 
+</html>

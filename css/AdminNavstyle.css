@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Long+Cang&family=Oswald:wght@300&display=swap');
+        *{
+            font-family: 'Long Cang', cursive;
+            font-family: 'Oswald', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .header a{
+			justify-content: right;
+		}
+
+        .nav {
+            display: flex;
+            position: relative;
+
+        }
+
+        .nav .sidebar{
+            position: fixed;
+            width: 200px;
+            height: 100%;
+            background: #d0b693;
+            padding: 30px 0;
+        }
+
+        .nav .sidebar img{
+            width: 100px; 
+            height: 100px;
+            text-align: center;
+            margin-left: 40px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .nav .sidebar ul li{
+            padding: 15px;
+            border-bottom: 1px solid rgba(0, 0,0,0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .nav .sidebar ul li a{
+            color: white;
+            display: block;
+        }
+    
+        .nav .sidebar ul li a .fas{
+            width: 25px;
+        }
+
+        .nav .sidebar ul li:hover{
+            background: #ddc0a5;
+        }
+
+        .nav .sidebar ul li:hover a {
+            color: 	#816955;
+        }
+        
+        .nav .main-content{
+            width: 100%;
+            height: 100vh;
+            margin-left: 200px;
+
+        }
+
+        .navtop h{
+            font-weight: bold;
+        }

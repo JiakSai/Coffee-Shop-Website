@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+</head>
+<body>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Long+Cang&family=Oswald:wght@300&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Long Cang', cursive;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .container{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ddc0a5;
+        }
+
+        .loginform{
+            background-color: white;
+            width: 50%;
+            height: 60%;
+            padding: 58px;
+            box-shadow: 0 50px 50px -50px darkslategray;
+            display: flex;
+            flex-direction: row;
+            margin-top: 20px;
+        }
+
+        form,
+        image{
+            width: 50%;
+        }
+
+        .loginform h1{
+            text-align: center;
+            font-size: 28px;
+            font-weight: 600;
+            color: #816955;
+        }
+
+        .loginform .field{
+            height: 50px;
+            width: 100%;
+            margin-top: 30px;
+            position: relative;
+            border-radius: 6px;
+        }
+
+        .field input{
+            height: 100%;
+            width: 100%;
+            border: none;
+            font-size: 16px;
+            border-radius: 6px;
+            outline: none;
+            padding: 0 15px;
+            border : 1px solid #cacaca;
+        }
+
+        .loginform input:focus{
+            border-bottom-width: 2px;
+        }
+
+        .button a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #button{
+            font-size: 16px;
+            color: white;
+            background-color: #bda17e;
+            cursor: pointer;
+            margin-top: 18px;
+        }
+
+        .image{
+            padding-left: 30px;
+        }
+
+        .image img{
+            border-radius: 8px;
+            box-shadow: 3.3px 3.3px darkslategray;
+        }
+
+        .loginform a{
+            text-decoration: none;
+        }
+
+        #hideicon{
+            position: absolute;
+            top:50%;
+            right: 10px;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #8b8b8b;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .formlink{
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .formlink p{
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .formlink a:hover{
+            text-decoration: underline;
+        }
+
+        #error_id,
+        #error_password{  
+            color: red;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+    </style>
+
+    <div class="container">
+        <div class="loginform">
+                <form>
+                    <h1>Admin Login Panel</h1>
+                        <div class="field">
+                            <input type="text" id="adminid" placeholder="Admin Id">
+                            <span id="error_id"></span>
+                        </div>
+
+                        <div class="field">
+                            <input type="password" id="password" class="password" placeholder="Password">
+                            <i class='bx bx-hide' id="hideicon"></i>
+                            <span id="error_password"></span>
+                        </div>
+
+                    <div class="formlink">
+                        <p><a href="#" class="forgotpasslink">Forgot password?</a></p>
+                    </div>
+
+                    <div class="button">
+                        <a class="field" id="button" onclick="validate();">
+                            <span>Login</span>
+                        </a>
+                    </div>
+                </form>
+
+                <div class="image">
+                    <img src="image/577092ec-e66b-43bd-b86f-e49147e5f410.jpg" width="320px" height="320x">
+                </div>
+        </div>
+    </div>
+
+    <script>
+        
+    function validate(){
+    var inputid = document.getElementById("adminid").value;
+    var inputpassword = document.getElementById("password").value;
+    var error = 0;
+    
+    if(inputid === "admin")
+    {
+        error_id.innerHTML = "";
+    }
+    else
+    {
+        error_id.innerHTML = "Invalid Admin Id ! Please try again.";
+        error = error+1;
+    }
+
+    if(inputpassword === "p22word2")
+    {
+        error_password.innerHTML = "";
+    }
+    else
+    {
+         error_password.innerHTML = "Invalid Password ! Please try again.";
+         error = error+1;
+    }
+
+    console.log(document.getElementById("password").value);
+    console.log(error);
+
+    if(error == 0)
+    {
+        window.open("adminboard.html", "_self");
+    }
+
+}
+        const forms = document.querySelector(".loginform"),
+        pwShowHide = document.querySelectorAll("#hideicon"),
+        links = document.querySelectorAll(".formlink");
+        pwShowHide.forEach(eyeIcon => {
+        eyeIcon.addEventListener("click", () => {
+            let pwFields = eyeIcon.parentElement.parentElement.querySelectorAll(".password");
+            
+            pwFields.forEach(password => {
+                if(password.type === "password"){
+                    password.type = "text";
+                    eyeIcon.classList.replace("bx-hide", "bx-show");
+                    return;
+                }
+                password.type = "password";
+                eyeIcon.classList.replace("bx-show", "bx-hide");
+        })
+        
+    })
+})  
+    </script>
+</body>
+</html>

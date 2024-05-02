@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Café Serenity Admin</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/AdminNavstyle.css" />
+    <style>
+        * {
+            font-family: 'Long Cang', cursive;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background-image: linear-gradient(to right, #f0dbbb, #ddc0a5, #bda17e);
+        }
+
+        .container {
+            margin-left: 6%;
+            display: flex;
+            height: 100vh;
+			margin-top: 2%;
+			margin-right: 5%;
+        }
+
+        .navtop {
+			margin-left: 2%;
+            padding-top: 20px;
+            text-align: left;
+            border-bottom: solid 2px #816955;
+			font-size: 45px;
+            text-shadow: 3px 3px 3px #ddccbe;
+        }
+		
+        .form {
+			width: 100%;
+			height:40%;
+			box-shadow: 0 0 7px 4px rgba(104, 104, 104, 0.5);
+			background-color: #f0dbbb; 
+			margin-right: 2%;
+			margin-bottom: 2%;
+			padding: 20px;
+		}
+		
+		.form th{
+			color: white;
+		}
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+		.staff td:hover,
+        .staff th:hover {
+            cursor: pointer;
+        }
+		
+        .staff tr:hover td {
+            background-color: #fdf7e4;
+        }
+		
+        th,
+        td {
+            border: 2px solid #816955;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #816955;
+            font-size: 20px;
+        }
+
+        td {
+            font-size: 18px;
+        }
+		
+		.hidden {
+            display: none;
+        }
+        
+        button {
+			margin-top: 10px;
+            width: 90px;
+            height: 40px;
+            background-color: #a57e57;
+            border-radius: 10px;
+            font-size: 90%;
+            text-align: center;
+            box-shadow: 0 3px #999;
+        }
+        
+        button:hover {
+            background-color: #ddc0a6;
+            cursor: pointer;
+        }
+        
+        button:active {
+            box-shadow: 0 2px #666;
+            transform: translateY(3px);
+        }
+		
+		.text-setting h2{
+			color: #483225;
+			padding-top: 10px;
+            font-size: 35px;
+            text-shadow: 3px 3px 3px #ddccbe;
+		}
+		
+		.text-setting p{
+			font-size: 20px;
+			padding-bottom: 5px;
+		}
+
+		.text-setting label{
+			font-size: 20px;
+			padding-bottom: 5px;
+		}
+			
+    </style>
+</head>
+
+<body>
+
+    <div class="nav">
+        <div class="sidebar">
+            <a href="adminboard.html"><img src="image/577092ec-e66b-43bd-b86f-e49147e5f410.jpg"></a>
+            <ul>
+                <li><a href="./A_staff.html"><i class="fas fa-id-card"></i>Staff Page</a></li>
+                <li><a href="./A_user.html"><i class="fas fa-user"></i>User Page</a></li>
+                <li><a href="./A_menu_1.html"><i class="fas fa-mug-hot"></i>Menu Page</a></li>
+                <li><a href="./adminsales.html"><i class="fas fa-bar-chart"></i>Sales Page</a></li>
+                <li><a href="./A_stores_1.html"><i class="fas fa-location-pin"></i>Store Location Page</a></li>
+                <li><a href="./A_rewards_1.html"><i class="fas fa-award"></i>Rewards Page</a></li>
+                <li><a href="./A_voucher.html"><i class="fas fa-ticket"></i>Voucher Page</a></li>
+                <li><a href="./adminlogin.html"><i class="fas fa-arrow-right-from-bracket"></i>Logout</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+
+			 <div class="navtop">
+                    <h>Menu Manage</h>
+					<br>
+                </div>
+            <div class="container">
+              
+                <br>
+                <div class="form">
+                    <table>
+                        <th style="width: 10%;">Categories</th>
+                        <th style="width: 10%;">Coffee Name</th>
+                        <th style="width: 10%;">Coffee Price (RM)</th>
+                    </table>
+                    <table class="staff" id="table">
+                        <tr>
+                            <td style="width: 10%;">Coffee & Espresso</td>
+                            <td style="width: 10%;">Vanilla Cream Cold Brew</td>
+                            <td style="width: 10%;">18.50</td>
+                        </tr>
+
+						<tr>
+                            <td style="width: 10%;">Frappuccino</td>
+                            <td style="width: 10%;">Espresso Frappuccino</td>
+                            <td style="width: 10%;">20</td>
+                        </tr>
+                    </table>
+                    <hr>
+					<button id="showEditBtn" onclick="show();">Show edit</button>
+					<div class="hidden" id="click">
+						<div class="text-setting">
+							<h2>Edit or Add Menu</h2>
+							<label for="fca">Categories : </label>
+							<select name="fca" id="fca">
+								<option value="Coffee & Espresso">Coffee & Espresso</option>
+								<option value="Chocolate & Tea">Chocolate & Tea</option>
+								<option value="Frappuccino">Frappuccino</option>
+							</select>
+							<p>Coffee Name : <input type="text" name="fname" id="fname"></p>
+							<p>Coffee Price (RM) : <input type="number" name="fprice" id="fprice"></p>
+						</div>	
+						<button onclick="addHtmlTableRow();">Add</button>
+						<button onclick="editHtmlTbleSelectedRow();">Edit</button>
+						<button onclick="removeSelectedRow();">Remove</button>
+					</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<script>
+				var rIndex,
+					table = document.getElementById("table");
+
+				function show() 
+				{
+					var clickDiv = document.getElementById("click");
+					clickDiv.classList.remove("hidden");
+
+					var formHeight = document.querySelector('.form').offsetHeight;
+					document.querySelector('.form').style.height = formHeight + 210 + 'px';
+
+					document.getElementById("showEditBtn").disabled = true;
+				}
+
+				function checkEmptyInput() 
+				{
+					var isEmpty = false;
+					var fca = document.getElementById("fca").value;
+					var fname = document.getElementById("fname").value;
+					var fprice = document.getElementById("fprice").value;
+
+					if (fca === "") 
+					{
+						alert("Categories Connot Be Empty");
+						isEmpty = true;
+					} 
+					else if (fname === "") 
+					{
+						alert("Coffee Name Connot Be Empty");
+						isEmpty = true;
+					} 
+					else if (fprice === "") 
+					{
+						alert("Coffee Price Connot Be Empty");
+						isEmpty = true;
+					} 
+					return isEmpty;
+				}
+
+				function addHtmlTableRow()
+				{
+					if (!checkEmptyInput()) 
+					{
+						var newRow = table.insertRow(table.length),
+							cell1 = newRow.insertCell(0),
+							cell2 = newRow.insertCell(1),
+							cell3 = newRow.insertCell(2),
+
+							fca = document.getElementById("fca").value,
+							fname = document.getElementById("fname").value,
+							fprice = document.getElementById("fprice").value;
+
+						cell1.innerHTML = fca;
+						cell2.innerHTML = fname;
+						cell3.innerHTML = fprice;
+
+						selectedRowToInput();
+
+						var formHeight = document.querySelector('.form').offsetHeight;
+						document.querySelector('.form').style.height = formHeight + 50 + 'px';
+					}
+				}
+
+				selectedRowToInput();
+
+				function selectedRowToInput() 
+				{
+					for (var i = 0; i < table.rows.length; i++) 
+					{
+						table.rows[i].onclick = function ()
+						{
+							rIndex = this.rowIndex;
+							document.getElementById("fca").value = this.cells[0].innerHTML;
+							document.getElementById("fname").value = this.cells[1].innerHTML;
+							document.getElementById("fprice").value = this.cells[2].innerHTML;
+						};
+					}
+				}
+
+				selectedRowToInput();
+
+				function editHtmlTbleSelectedRow() 
+				{
+					if (rIndex !== undefined) 
+                    {
+						var fca = document.getElementById("fca").value;
+						var fname = document.getElementById("fname").value;
+						var fprice = document.getElementById("fprice").value;
+
+						if (!checkEmptyInput()) 
+						{
+							table.rows[rIndex].cells[0].innerHTML = fca;
+							table.rows[rIndex].cells[1].innerHTML = fname;
+							table.rows[rIndex].cells[2].innerHTML = fprice;
+						}
+
+						rIndex = undefined;
+					} 
+                    else
+                    {
+                        alert("Please select a row to edit.");
+                    }
+				}
+
+				function removeSelectedRow() 
+				{
+					if (rIndex !== undefined) 
+                    {
+                        table.deleteRow(rIndex);
+
+						document.getElementById("fca").value = "";
+						document.getElementById("fname").value = "";
+						document.getElementById("fprice").value = "";
+
+						var formHeight = document.querySelector('.form').offsetHeight;
+						document.querySelector('.form').style.height = formHeight - 50 + 'px';
+
+						rIndex = undefined;
+                    } 
+                    else
+                    {
+                        alert("Please select a row to delete.");
+                    }
+				}
+	</script>
+
+</body>
+
+</html>

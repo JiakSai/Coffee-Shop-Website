@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rewards</title>
+	<link rel="stylesheet" href="./css/footerstyle.css">
+	<link rel="stylesheet" href="./css/navstyle.css">
+	
+    <style>
+		@import url('https://fonts.googleapis.com/css2?family=Long+Cang&family=Oswald:wght@300&display=swap');
+        body {
+            margin: 0;
+			font-family: 'Long Cang', cursive;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        img{
+            width: 100%;
+        }
+
+        .container {
+            display: flex;
+            align-items: stretch;
+        }
+
+        .left-section {
+            flex: 0 0 auto;
+            width: 350px; 
+            height: 100vh;
+            padding: 20px;   
+            overflow-y: auto;     
+            background-color: white; 
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+        }
+		
+        .left-section p {
+            font-size: 30px;
+            font-weight: 900;
+            text-align: center;
+			margin-bottom: 10px;
+        }
+
+        .left-section img {
+            display: block;
+            margin: 0 auto;
+			width:200px;
+			height:200px;
+        }
+		
+		.button-container {
+			display: flex;
+		}
+
+        .left-section button {
+            padding: 12px 16px;
+            border-radius: 12px;
+            background-color: white;
+            color: black;
+            border: 2px solid #816955;
+            box-shadow: 0 5px #666;
+			font-family: 'Long Cang', cursive;
+            font-family: 'Oswald', sans-serif;
+			width: auto;
+			height: auto; 
+			display: block; 
+		
+        }
+		
+		.left-section button:nth-child(2) {
+			margin-bottom: 0; 
+			margin-left: 10px;
+		}
+
+        .left-section button:hover {
+            background-color: #f0dbbb;
+        }
+
+        .left-section button:active {
+            background-color: #f0dbbb;
+            transform: translateY(4px);
+        }
+
+        .right-section {
+            flex: 1;
+            padding: 10px;
+            height: 100vh;
+            background-color: white;
+			overflow: auto;
+        }
+		
+        .section1 h2 {
+			font-size: 30px;
+            text-align: left;
+            color: white;
+            text-shadow: 1px 1px 2px #5a3e36, 0 0 30px #483c32, 0 0 30px #816955;
+			margin-top: 10px;
+        }
+
+        .section2 h2 {
+			font-size: 30px;
+            text-align: right;   
+            color: white;
+            text-shadow: 1px 1px 2px #5a3e36, 0 0 30px #483c32, 0 0 30px #816955;
+			margin-top: 10px;
+        }
+
+		.section1 p {
+			font-size: 18px;
+			text-align: justify;
+            margin-left: 30px;
+			margin-top: 10px;
+        }
+
+        .section2 p {
+			font-size: 18px;
+			text-align: right;
+            margin-right: 30px;
+			margin-top: 10px;
+        }
+        .section1 {
+            background-color: #f0dbbb;
+            padding: 20px;
+            margin-bottom: 10px;
+        }
+
+        .section2 {
+            background-color: #bda17e;
+            padding: 20px;
+            margin-bottom: 10px;
+        }
+		
+		
+		#end {
+			background-color: #bda17e;
+            padding: 20px;
+            margin-bottom: 10px;
+		
+		}
+		
+		#end p{
+			text-align: center;
+		
+		}
+		
+		#end h2{
+			text-align: center;
+		
+		}
+		
+        #text-style-1 {
+			font-size: 20px;
+            text-decoration: overline underline;
+            text-shadow: 1px 1px;
+			
+        }
+		
+		#text-style-1 p{
+			font-size: 25px;
+           
+        }
+		
+		#img_1{
+			width:200px;
+			height:200px;
+			float: left;
+		
+		}
+		
+		#img_2{
+			width:150px;
+			height:150px;
+			float: right;
+		
+		}
+		
+		#img_3{
+			width:280px;
+			height:280px;
+			float: right;
+			margin-right: 40px;
+			margin-top: 15px;
+		}
+		
+    </style>
+
+    <script>
+        function redirectToLoginPage() {
+            window.location.href = "./login.html";
+        }
+
+        function redirectToSignupPage() {
+            window.location.href = "./signup.html";
+        }
+    </script>
+</head>
+
+<body>
+	<!--header-->
+    <header class="navheader">
+        <a href="./index.html" class="logo"><img src="image/577092ec-e66b-43bd-b86f-e49147e5f410.jpg" alt=""></a>
+        <div class="menu-icon" id="menu-icon"></div>
+            <ul class="navbar">
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="./AboutUs.html">ABOUT US</a></li>
+                <li><a href="./signatureblend.html">OUR COFFEE</a></li>
+                <li><a href="./menu.html">OUR MENU</a></li>
+                <li><a href="./C_stores_1.html">OUR STORE</a></li>
+                <li><a href="./C_Rewards_1.html">REWARDS</a></li>
+                <li><a href="./MyPage.html">ACCOUNT</a></li>
+                <li><a href="./contactuspage.html">CONTACT US</a></li>
+            </ul>
+    </header>
+	
+    <div class="container">
+        <div class="left-section">
+            <img src="image/logo.png" alt="This is a logo pic">
+            <p>Sip, Sign and Savor !</p>
+			<div class="button-container">
+				<button type="button" id="joinNowButton" onclick="redirectToLoginPage()">Join us Now</button>
+				<button type="button" id="signInButton" onclick="redirectToSignupPage()">Sign in</button>
+			</div>
+        </div>
+
+        <div class="right-section" >
+            <div class="section1">
+                <h2>Swipe, Stack, Splurge - Your Treats !</h2>
+                <p>Indulge in our loyalty rewards! For every purchase, collect loyalty points towards a bouquet of rewards and surprises waiting just for you.</p>
+            </div>
+
+            <div class="section2">
+                <h2>More Sips, More Perks, More Treats !</h2>
+				<div id="img_1">
+					<img src="image/coffee_cup.png" alt="This is a coffee cup pic">
+				</div>
+                <div id="text-style-1">
+                    <p>"Happy Birthday, Coffee lover !</p>
+                </div>
+                <p>Celebrate your special day with a free slice of cake when you grab any coffee in your birthday month !</p>
+                <div id="text-style-1">
+                    <p>Caffeine Crusader Tiers</p>
+                </div>
+                <p>Climb the caffeine ladder! Level up your membership for exclusive perks and top-tier treats based on your sipping prowess.</p>
+            </div>
+
+            <div class="section1">
+					<div id="img_2">
+						<img src="image/random_coffee.png" alt="This is a random pic" >
+					</div>
+                <h2>Seasonal or Limited-Time Offers</h2>
+                <p>Sip into the holiday spirit! Enjoy seasonal rewards and limited-time offers brewed especially for our amazing members.</p>
+            </div>
+
+            <div class="section2">
+                <h2>Invite Friends, Earn Rewards</h2>
+                <p>Encourage members to refer friends to join the membership program.<br>Reward both the existing member and the new member with points or special offers upon successful referrals.</p>
+            </div>
+
+            <div class="section1">
+				<div id="img_3">
+						<img src="image/promo.png" alt="This is a promo pic">
+					</div>
+                <h2>Special Promotions for Members</h2>
+                <div id="text-style-1">
+                    <p>Exclusive Discounts</p>
+                </div>
+                <p>Offer members exclusive discounts on specific items or during particular times.</p>
+                <div id="text-style-1">
+                    <p>Limited-Time Offers</p>
+                </div>
+                <p>Provide early access or special deals for members on new coffee blends, seasonal drinks, or merchandise.</p>
+                <div id="text-style-1">
+                    <p>Member-Only Events</p>
+                </div>
+                <p>Host events such as coffee tasting sessions, workshops, or social gatherings exclusively for members.</p>
+            </div>
+			
+		
+			<div id="end">
+				<h2>Curious for more details?</h2>
+				<p>Delve into our FAQs for a deeper understanding of the Café Serenity memberships rewards and beyond !</p>
+			</div>
+		</div>
+    </div>
+	
+    <!--footer-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <footer class="footer">
+        <div class="content">
+            <div class="Company">
+                <h2>Our Company</h2>
+                    <a href="./AboutUs.html">About Us</a>
+                    <br>
+                    <a href="./signatureblend.html">Our Coffee</a>
+                    <br>
+                    <a href="./menu.html">Our Menu</a>
+                    <br>
+                    <a href="./C_stores_1.html">Our Store</a>
+            </div>
+            <div class="Terms">
+                <h2>Site Terms</h2>
+                    <a href="./tnc.html">Terms & Conditions</a>
+                    <br>
+                    <a href="./PP.html">Privacy Policy</a>
+                </ul>
+            </div>
+            <div class="Customer">
+                <h2>Customer Care</h2>
+                    <a href="./contactuspage.html">Contact Us</a>
+                    <br>
+                    <a href="./C_Rewards_1.html">Rewards</a>
+            </div>
+            <div class="Social">
+                <h2>Follow Us</h2>
+                    <a href="https://www.facebook.com/chan.zhichung.52/" class="fa fa-facebook"></a>
+                    <a href="https://www.instagram.com/zchung._/" class="fa fa-instagram"></a>
+                    <a href="https://twitter.com/?lang=en" class="fa fa-twitter"></a>
+                    <a href="https://www.pinterest.com/chanzhichung101/" class="fa fa-pinterest"></a>
+                <p>For support requests please follow the links on our Contact Us page</p>
+                
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            <p>© Café Serenity Coffee Company Sdn Bhd (489678-H). All rights reserved.</p>
+        </div>
+    </footer>
+	
+</body>
+</html>
